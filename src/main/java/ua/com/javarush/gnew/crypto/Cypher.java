@@ -22,6 +22,10 @@ public class Cypher {
         return builder.toString();
     }
 
+    public String decrypt(String input, int key) {
+        return encrypt(input, -key);
+    }
+
     private Character processSymbol(char symbol, ArrayList<Character> rotatedAlphabet) {
         if (!originalAlphabet.contains(symbol)) {
             return symbol;
