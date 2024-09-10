@@ -34,6 +34,14 @@ public class Main {
                 Path newFilePath = runOptions.getFilePath().resolveSibling(newFileName);
                 fileManager.write(newFilePath, decryptedContent);
             }
+            if(runOptions.getCommand()==Command.BRUTEFORCE){
+                String content = fileManager.read(runOptions.getFilePath());
+                String bruteForceContent= cypher.bruteForce(content);
+                String fileName = runOptions.getFilePath().getFileName().toString();
+                String newFileName = fileName.substring(0, fileName.length() - 16) + " [BRUTEFORCE].txt";
+                Path newFilePath = runOptions.getFilePath().resolveSibling(newFileName);
+                fileManager.write(newFilePath, bruteForceContent);
+            }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
