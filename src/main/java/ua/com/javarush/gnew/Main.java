@@ -7,7 +7,6 @@ import ua.com.javarush.gnew.runner.ArgumentsParser;
 import ua.com.javarush.gnew.runner.Command;
 import ua.com.javarush.gnew.runner.RunOptions;
 
-import java.nio.file.Path;
 
 public class Main {
     //start a project
